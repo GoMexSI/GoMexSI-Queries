@@ -11,5 +11,4 @@ rglobi::query('START predatorTaxon = node:taxons(name="Homo sapiens")
 7 WITH envo, preyTaxon, predatorTaxon  
 8 MATCH preyTaxon<-[:CLASSIFIED_AS]-pred2-[:ATE]->prey2-[:CLASSIFIED_AS]->preyOfPreyTaxon 
 9 RETURN envo.externalId, envo.name, preyTaxon.commonNames?, preyTaxon.path?, predatorTaxon.name as predatorName, preyTaxon.name as preyName, count(distinct preyOfPreyTaxon.name) as preyOfPreyCount') 
-10 
  
